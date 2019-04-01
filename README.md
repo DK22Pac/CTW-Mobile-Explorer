@@ -20,4 +20,5 @@ DK22Pac, 2015
 ### Third-party tools
 
 This tool uses PVR compression/decompression from PVR Tools (https://www.imgtec.com/developers/powervr-sdk-tools/pvrtextool/)
+
 This tool uses Ooki.Dialogs (http://www.ookii.org/software/dialogs/)
