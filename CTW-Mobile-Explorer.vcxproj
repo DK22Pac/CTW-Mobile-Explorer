@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3028CE0B-2A0B-44A2-8105-325978A25617}</ProjectGuid>
+    <RootNamespace>CTWMobileExplorer</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>CTW-Mobile-Explorer</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>D:\Games\x-gtasa\third-party\d3d9-sdk\include;$(IncludePath)</IncludePath>
+    <TargetName>CTW - Mobile Explorer Debug</TargetName>
+    <IntDir>.obj\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)output\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>D:\Games\x-gtasa\third-party\d3d9-sdk\include;$(IncludePath)</IncludePath>
+    <TargetName>CTW - Mobile Explorer</TargetName>
+    <IntDir>.obj\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)output\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level1</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(DIRECTX9_SDK_DIR)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DIRECTX9_SDK_DIR)\Lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level1</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(DIRECTX9_SDK_DIR)\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DIRECTX9_SDK_DIR)\Lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="Ookii.Dialogs">
+      <HintPath>output\Ookii.Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CTWResources.cpp" />
+    <ClCompile Include="dffapi\2dEffect.cpp" />
+    <ClCompile Include="dffapi\AnimationDictionary.cpp" />
+    <ClCompile Include="dffapi\Anisot.cpp" />
+    <ClCompile Include="dffapi\Atomic.cpp" />
+    <ClCompile Include="dffapi\Breakable.cpp" />
+    <ClCompile Include="dffapi\Clump.cpp" />
+    <ClCompile Include="dffapi\CollisionPlugin.cpp" />
+    <ClCompile Include="dffapi\EnvMap.cpp" />
+    <ClCompile Include="dffapi\Extension.cpp" />
+    <ClCompile Include="dffapi\ExtraVertColour.cpp" />
+    <ClCompile Include="dffapi\FrameList.cpp" />
+    <ClCompile Include="dffapi\Geometry.cpp" />
+    <ClCompile Include="dffapi\GeometryList.cpp" />
+    <ClCompile Include="dffapi\HAnim.cpp" />
+    <ClCompile Include="dffapi\Material.cpp" />
+    <ClCompile Include="dffapi\MaterialList.cpp" />
+    <ClCompile Include="dffapi\MatFX.cpp" />
+    <ClCompile Include="dffapi\Memory.cpp" />
+    <ClCompile Include="dffapi\Mesh.cpp" />
+    <ClCompile Include="dffapi\Native.cpp" />
+    <ClCompile Include="dffapi\NodeName.cpp" />
+    <ClCompile Include="dffapi\NormalMap.cpp" />
+    <ClCompile Include="dffapi\Pipeline.cpp" />
+    <ClCompile Include="dffapi\Rights.cpp" />
+    <ClCompile Include="dffapi\Skin.cpp" />
+    <ClCompile Include="dffapi\SkyMipmap.cpp" />
+    <ClCompile Include="dffapi\SpecMap.cpp" />
+    <ClCompile Include="dffapi\Std.cpp" />
+    <ClCompile Include="dffapi\Stream.cpp" />
+    <ClCompile Include="dffapi\String.cpp" />
+    <ClCompile Include="dffapi\Texture.cpp" />
+    <ClCompile Include="dffapi\TextureNative.cpp" />
+    <ClCompile Include="dffapi\texture_helper.cpp" />
+    <ClCompile Include="dffapi\Txd.cpp" />
+    <ClCompile Include="dffapi\UVAnim.cpp" />
+    <ClCompile Include="DffExport.cpp" />
+    <ClCompile Include="GXT.cpp" />
+    <ClCompile Include="ModelNameMap.cpp" />
+    <ClCompile Include="MyForm.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</MinimalRebuild>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Default</BasicRuntimeChecks>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExceptionHandling>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <MinimalRebuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</MinimalRebuild>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Default</BasicRuntimeChecks>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExceptionHandling>
+    </ClCompile>
+    <ClCompile Include="PVRTC\PVRTDecompress.cpp" />
+    <ClCompile Include="TextureExport.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dffapi\2dEffect.h" />
+    <ClInclude Include="dffapi\AnimationDictionary.h" />
+    <ClInclude Include="dffapi\Anisot.h" />
+    <ClInclude Include="dffapi\Atomic.h" />
+    <ClInclude Include="dffapi\Breakable.h" />
+    <ClInclude Include="dffapi\Clump.h" />
+    <ClInclude Include="dffapi\CollisionPlugin.h" />
+    <ClInclude Include="dffapi\EnvMap.h" />
+    <ClInclude Include="dffapi\Extension.h" />
+    <ClInclude Include="dffapi\ExtraVertColour.h" />
+    <ClInclude Include="dffapi\FrameList.h" />
+    <ClInclude Include="dffapi\Geometry.h" />
+    <ClInclude Include="dffapi\GeometryList.h" />
+    <ClInclude Include="dffapi\HAnim.h" />
+    <ClInclude Include="dffapi\Material.h" />
+    <ClInclude Include="dffapi\MaterialList.h" />
+    <ClInclude Include="dffapi\MatFX.h" />
+    <ClInclude Include="dffapi\Memory.h" />
+    <ClInclude Include="dffapi\Mesh.h" />
+    <ClInclude Include="dffapi\Native.h" />
+    <ClInclude Include="dffapi\NodeName.h" />
+    <ClInclude Include="dffapi\NormalMap.h" />
+    <ClInclude Include="dffapi\Pipeline.h" />
+    <ClInclude Include="dffapi\RenderWare.h" />
+    <ClInclude Include="dffapi\Rights.h" />
+    <ClInclude Include="dffapi\RwTypes.h" />
+    <ClInclude Include="dffapi\Skin.h" />
+    <ClInclude Include="dffapi\SkyMipmap.h" />
+    <ClInclude Include="dffapi\SpecMap.h" />
+    <ClInclude Include="dffapi\StdInc.h" />
+    <ClInclude Include="dffapi\Stream.h" />
+    <ClInclude Include="dffapi\String.h" />
+    <ClInclude Include="dffapi\Texture.h" />
+    <ClInclude Include="dffapi\TextureNative.h" />
+    <ClInclude Include="dffapi\texture_helper.h" />
+    <ClInclude Include="dffapi\Txd.h" />
+    <ClInclude Include="dffapi\UVAnim.h" />
+    <ClInclude Include="DffExport.h" />
+    <ClInclude Include="GXT.h" />
+    <ClInclude Include="ModelNameMap.h" />
+    <ClInclude Include="MyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CTWResources.h" />
+    <ClInclude Include="PVRTC\PVRTDecompress.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="TextureExport.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MyForm.resx">
+      <DependentUpon>MyForm.h</DependentUpon>
+      <DeploymentContent>false</DeploymentContent>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CTW-Mobile-Explorer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="cw.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
